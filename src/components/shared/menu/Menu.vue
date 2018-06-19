@@ -11,6 +11,7 @@
 		        <router-link :to="rota.path ? rota.path : '/'" class="nav-item">
 	              {{ rota.titulo }}
 	            </router-link>
+
 		      </li>
 		    </ul>
 		  </div>
@@ -32,6 +33,9 @@
 <style>
 
 .router-link-active{
+	padding: 8px;
+}
+.nav-item{
 	padding: 8px;
 }
 a{

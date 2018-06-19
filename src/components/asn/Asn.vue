@@ -2,48 +2,44 @@
 
 	<container>
 		<h1>{{title}}</h1>
-		<select v-model="select" v-on:change="chamaApi(select)" class="form-control">
-			<option disabled value="">Select an ASN</option>
+		<select v-model="selected" v-on:change="chamaApi(selected)">
+			<option disabled selected>Choose ASN</option>
 			<option v-for="as in asns">{{as.asn}}</option>
 
 		</select>
-		<table v-if="visible" class="table">
-			<thead class="thead-dark">
+		
+		<my-table :visible="visible">
+			
+			<slot name="thead">
 				<tr>
-					<th>ASN</th>
-					<th>Razão Social</th>
-					<th>CNPJ</th>
-					<th>Responsável</th>
-					<th>Telefones</th>
+					<th>Test</th>
 				</tr>
-			</thead>
-			<tbody>
+			</slot>
+			<slot name="tbody">
 				<tr>
-					<td>{{searchasn.asn}}</td>
-					<td>{{searchasn.razao_social}}</td>
-					<td>{{searchasn.cnpj}}</td>
-					<td>{{searchasn.responsavel}}</td>
-					<td>{{searchasn.telefones}}</td>
+					<td>Test</td>
 				</tr>
-			</tbody>
-		</table>
+			</slot>
+		</my-table>
 	</container>
 
 </template>
 
 <script>
 import Container from '../shared/container/Container.vue';
+import MyTable from '../shared/table/MyTable.vue';
 export default{
 	components:{
-		'container': Container
+		'container': Container,
+		'my-table': MyTable
 	},
 	data(){
 		return{
 			title: 'ASN',
-			'select': '',
+			'selected': '',
 			asns: [],
 			'searchasn': [],
-			visible: false
+			visible: true
 		}
 	},
 	created(){

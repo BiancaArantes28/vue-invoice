@@ -1,5 +1,5 @@
 <template>
-  <div class="corpo">
+  <div class="body">
     <meu-menu :rotas="routes"/>
       <router-view></router-view>
   </div>
@@ -28,7 +28,7 @@ export default {
 
 <style>
 
-  .corpo{
+  .body{
     font-family: Helvetica, sans-serif;
     width: 100%;
     margin: 0;
