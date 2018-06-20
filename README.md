@@ -5,14 +5,25 @@
 ## Build Setup
 
 ``` bash
-# install dependencies
-npm install
+ ## install node.js
+ sudo apt-get install -y nodejs
 
-# serve with hot reload at localhost:8080
-npm run dev
+ # in some linux applications, the npm start command may not work, to solve this, do:
+ sudo ln -s /usr/bin/nodejs /usr/bin/node
 
-# build for production with minification
-npm run build
+ ## install Vue
+ npm install -g vue-cli@2.7.0
+
+ # a new project from a template
+ vue init webpack-simple alurapic
+
+ # install project
+ npm install
+
+ # up aplication
+ npm run dev
 ```
+
+
 
 For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
